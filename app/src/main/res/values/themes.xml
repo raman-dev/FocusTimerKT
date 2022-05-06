@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FocusTimerKT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorSecondary">@color/slate_black</item>
+        <item name="colorSecondaryVariant">@color/teal_100a</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorPrimary">#eeedef</item>
+        <item name="colorPrimaryVariant">@color/purple_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/timerBackgroundColor</item>
+        <!-- Customize your theme here. -->
+        <item name="timerBackgroundColor">@color/dark_slate_black</item>
+        <item name="timerSettingBackgroundColor">@color/pastel_teal</item>
+        <item name="timerTextColor">#eeedef</item>
+        <item name="timerRadialFillColor">@color/pastel_light_aqua</item>
+        <item name="timerRadialUnFillColor">@color/slate_black</item>
+        <item name="timerControlButtonColor">@color/pastel_aqua</item>
+        <item name="timerVolumeButtonColor">@color/pastel_teal</item>
+        <item name="timerResetButtonColor">@color/pastel_teal</item>
+
+    </style>
+
+</resources>

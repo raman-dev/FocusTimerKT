@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RadialTimeDisplay">
+        <attr name="showText" format="boolean" />
+        <attr name="arcWidth" format="dimension"/>
+        <attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="timerBackgroundColor" format="color"/>
+        <attr name="timerTextColor" format="color"/>
+        <attr name="timerRadialFillColor" format="color"/>
+        <attr name="timerRadialUnFillColor" format="color"/>
+        <attr name="timerControlButtonColor" format="color"/>
+        <attr name="timerVolumeButtonColor" format="color"/>
+        <attr name="timerResetButtonColor" format="color"/>
+
+        <attr name="timerSettingBackgroundColor" format="color"/>
+
+
+
+    </declare-styleable>
+</resources>

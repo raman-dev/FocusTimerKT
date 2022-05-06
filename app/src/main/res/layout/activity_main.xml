@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/timerBackgroundColor">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/soundToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/sound_on_24"
+            app:backgroundTint="?attr/timerVolumeButtonColor"
+            app:elevation="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/muteButtonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/setting_title_font"
+            android:textColor="?attr/timerTextColor"
+            android:textSize="20sp"
+            android:text="@string/toggle_sound"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/soundToggleButton"
+            app:layout_constraintStart_toStartOf="@id/soundToggleButton"
+            app:layout_constraintTop_toBottomOf="@id/soundToggleButton" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/resetTimerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/reset_timer_24"
+            app:backgroundTint="?attr/timerResetButtonColor"
+            app:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/resetButtonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resetLabel"
+            android:textColor="?attr/timerTextColor"
+            android:fontFamily="@font/setting_title_font"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/resetTimerButton"
+            app:layout_constraintStart_toStartOf="@id/resetTimerButton"
+            app:layout_constraintTop_toBottomOf="@id/resetTimerButton" />
+
+        <FrameLayout
+            android:id="@+id/timeDisplayContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35">
+
+            <com.raman.focustimerkt.RadialTimeDisplay
+                android:id="@+id/radialTimerDisplay"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:padding="0dp" />
+
+            <TextView
+                android:id="@+id/timerTextDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/timer_display_font"
+                android:textStyle="bold"
+                android:text="@string/time_example"
+                android:textColor="?attr/timerTextColor"
+                android:textSize="65sp" />
+
+<!--            <include-->
+<!--                android:id="@+id/timerInputLayout"-->
+<!--                layout="@layout/timer_setting_layout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center" />-->
+
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/timerControlButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp"
+            android:src="@drawable/play_arrow_24"
+            android:text="PLAY"
+            app:backgroundTint="?attr/timerControlButtonColor"
+            app:elevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timeDisplayContainer"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/timerControlButtonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="play"
+            android:textColor="?attr/timerTextColor"
+            android:fontFamily="@font/setting_title_font"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/timerControlButton"
+            app:layout_constraintStart_toStartOf="@id/timerControlButton"
+            app:layout_constraintTop_toBottomOf="@id/timerControlButton" />
+
+<!--        <include layout="@layout/mode_toggle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="32dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/timerControlButtonLabel"-->
+<!--            app:layout_constraintStart_toStartOf="@id/timerControlButtonLabel"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/timerControlButtonLabel"-->
+<!--            />-->
+
+        <LinearLayout
+            android:id="@+id/repTextContainer"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/timeDisplayContainer"
+            app:layout_constraintStart_toEndOf="@id/timerControlButton"
+            app:layout_constraintBottom_toBottomOf="@id/timerControlButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/repTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="reps"
+                android:textColorHint="?attr/timerTextColor"
+                style="@style/Widget.FocusTimerKT.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/repEditText"
+                    android:text="@string/one"
+
+                    android:enabled="true"
+                    android:maxLength="2"
+                    android:textAlignment="center"
+                    android:textColor="?attr/timerTextColor"
+                    android:textSize="20sp"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <TextView
+                android:visibility="invisible"
+                android:text="repeats"
+                android:fontFamily="@font/setting_title_font"
+                android:textColor="?attr/timerTextColor"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@drawable/bottomsheet_background"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="64dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:layout_width="64dp"
+            android:layout_height="5dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/notch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="12dp"
+            android:fontFamily="@font/setting_title_font"
+            android:text="@string/setting_label"
+            android:textColor="?attr/timerBackgroundColor"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="?attr/timerBackgroundColor"
+                    android:fontFamily="@font/setting_title_font"
+                    android:text="Focus"
+                    android:textSize="24sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="?attr/timerBackgroundColor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SettingItemStyle"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <NumberPicker
+                        android:id="@+id/minuteNumberPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.25"
+                        android:theme="@style/NumberPickerStyle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:theme="@style/NumberPickerStyle" />
+
+                    <NumberPicker
+                        android:id="@+id/secondsNumberPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.25"
+                        android:theme="@style/NumberPickerStyle" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1.2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/setting_title_font"
+                        android:text="Cooldown"
+                        android:textColor="?attr/timerBackgroundColor"
+                        android:textSize="24sp" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="?attr/timerBackgroundColor" />
+
+                <LinearLayout
+                    android:id="@+id/coolDownSettingParentView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SettingItemStyle"
+
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <NumberPicker
+                        android:id="@+id/coolDownMinuteNumberPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.25"
+                        android:theme="@style/NumberPickerStyle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:theme="@style/NumberPickerStyle" />
+
+                    <NumberPicker
+                        android:id="@+id/coolDownSecondsNumberPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.25"
+                        android:theme="@style/NumberPickerStyle" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_weight="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/commitTimerSettingButton"
+                    style="@style/Widget.FocusTimer.Button"
+                    android:textAppearance="@style/TextAppearance.FocusTimerKT.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="32dp"
+                    android:layout_marginRight="24dp"
+                    android:textColor="@color/white"
+                    android:text="@string/apply_changes" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

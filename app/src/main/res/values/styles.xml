@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">48sp</item>
+        <item name="android:fontFamily">@font/timer_display_font</item>
+        <item name="colorControlNormal">#00ffffff</item>
+        <item name="android:textColorPrimary">?attr/timerTextColor</item>
+        <item name="android:textColor">?attr/timerTextColor</item>
+    </style>
+
+    <style name="NumberPickerSettingStyle">
+        <item name="android:textSize">60sp</item>
+        <item name="android:fontFamily">@font/timer_display_font</item>
+        <item name="colorControlNormal">#00ffffff</item>
+        <item name="android:textColorPrimary">?attr/timerTextColor</item>
+        <item name="android:textColor">?attr/timerTextColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="SettingItemStyle">
+        <item name="android:layout_marginHorizontal">24dp</item>
+        <item name="android:layout_marginVertical">4dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:background">@drawable/time_item</item>
+    </style>
+
+    <style name="Widget.FocusTimer.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="backgroundTint">?attr/timerRadialUnFillColor</item>
+        <item name="rippleColor">@color/dark_slate_black</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+    </style>
+
+    <style name="TextAppearance.FocusTimerKT.Button.Text" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/setting_title_font</item>
+        <item name="android:textSize">18sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+  <style name="Widget.FocusTimerKT.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+      <item name="boxStrokeColor">@drawable/mtrl_outline_box</item>
+      <item name="boxBackgroundColor">?attr/timerBackgroundColor</item>
+  </style>
+
+</resources>

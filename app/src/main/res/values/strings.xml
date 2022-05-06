@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FocusTimerKT</string>
+    <string name="time_example">15:00</string>
+    <string name="channel_name">FocusTimerKTNotificationChannel</string>
+    <string name="channel_description">Notification channel for timer updates</string>
+    <string name="notification_title">Focus Timer</string>
+    <string name="preference_name">com.raman.focustimerkt</string>
+    <string name="setting_label">Set Interval Times</string>
+    <string name="interval_setting_label">Focus Time</string>
+    <string name="cooldown_setting_label">Cooldown Time</string>
+    <string name="cancel">cancel</string>
+    <string name="confirm">confirm</string>
+    <string name="apply_changes">apply</string>
+    <string name="toggle_sound">toggle\nsound</string>
+    <string name="resetLabel">reset</string>
+    <string name="interval_label">Intervals</string>
+    <string name="one">01</string>
+</resources>

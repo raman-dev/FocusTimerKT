@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/focusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/focus_sla"
+        android:textAllCaps="false"
+        android:layout_marginRight="1dp"
+        android:text="focus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/coolDownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:layout_toEndOf="@id/focusButton"
+        android:text="cooldown"
+        android:background="@drawable/cooldown_sla"
+        />
+</RelativeLayout>
